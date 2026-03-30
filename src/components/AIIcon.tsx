@@ -1,0 +1,29 @@
+import React from "react";
+
+interface AIIconProps {
+  size?: number;
+}
+
+export const AIIcon: React.FC<AIIconProps> = ({ size = 28 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path 
+      d="M10.5 2C10.5 7.5 15 10.5 20.5 10.5C15 10.5 10.5 13.5 10.5 19C10.5 13.5 6 10.5 0.5 10.5C6 10.5 10.5 7.5 10.5 2Z" 
+      fill="url(#aiGradient1)"
+    />
+    <path 
+      d="M18.5 13.5C18.5 15.75 20 17 22.5 17C20 17 18.5 18.25 18.5 20.5C18.5 18.25 17 17 14.5 17C17 17 18.5 15.75 18.5 13.5Z" 
+      fill="url(#aiGradient2)"
+    />
+    <defs>
+      <linearGradient id="aiGradient1" x1="0.5" y1="2" x2="20.5" y2="19" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#1A73E8"/>
+        <stop offset="0.5" stopColor="#9b72cb"/>
+        <stop offset="1" stopColor="#d96570"/>
+      </linearGradient>
+      <linearGradient id="aiGradient2" x1="14.5" y1="13.5" x2="22.5" y2="20.5" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#1A73E8"/>
+        <stop offset="1" stopColor="#d96570"/>
+      </linearGradient>
+    </defs>
+  </svg>
+);
