@@ -100,7 +100,7 @@ export const NotesList: React.FC<NotesListProps> = ({ notes }) => {
       try {
         const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
         const res = await fetch(`${apiUrl}/note/search?q=${encodeURIComponent(searchQuery)}`);
-        
+
         if (res.ok) {
           const data = await res.json();
           setDisplayedNotes(data.data || []);
@@ -120,7 +120,7 @@ export const NotesList: React.FC<NotesListProps> = ({ notes }) => {
       size="large"
       value={searchQuery}
       onChange={(e) => setSearchQuery(e.target.value)}
-      placeholder="Search with AI..."
+      placeholder="Semantic Search (AI)..."
       prefix={
         <div style={{ display: "flex", alignItems: "center" }}>
           <div style={{ marginRight: "8px", display: "flex", alignItems: "center" }} title="Powered by AI">
@@ -128,10 +128,10 @@ export const NotesList: React.FC<NotesListProps> = ({ notes }) => {
           </div>
           {searchImagePreview && (
             <div style={{ position: "relative", marginRight: "6px", display: "flex", alignItems: "center" }}>
-              <img 
-                src={searchImagePreview} 
-                alt="Search query" 
-                style={{ height: "24px", width: "24px", borderRadius: "4px", objectFit: "cover" }} 
+              <img
+                src={searchImagePreview}
+                alt="Search query"
+                style={{ height: "24px", width: "24px", borderRadius: "4px", objectFit: "cover" }}
               />
               <Button
                 type="primary"
@@ -152,17 +152,17 @@ export const NotesList: React.FC<NotesListProps> = ({ notes }) => {
       }
       suffix={
         <span onClick={(e) => e.stopPropagation()}>
-          <Upload 
-            accept="image/*" 
+          <Upload
+            accept="image/*"
             showUploadList={false}
             beforeUpload={(file) => {
               handleImageSearch(file as File);
               return false;
             }}
           >
-            <Button 
-              type="text" 
-              icon={<PictureOutlined />} 
+            <Button
+              type="text"
+              icon={<PictureOutlined />}
               style={{ padding: 0, color: "#1890ff", display: "flex", alignItems: "center" }}
               title="Search by image"
             />
